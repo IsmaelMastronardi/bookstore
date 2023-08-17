@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Book = ({ item, deleteFunc }) => (
   <li>
     <input placeholder={item.title} />
-    <button type="button" onClick={deleteFunc}>Delete</button>
+    <button type="button" onClick={() => deleteFunc(item.id)}>Delete</button>
   </li>
 );
 

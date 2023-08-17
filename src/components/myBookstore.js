@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import MyBookList from './myBookList';
+import AddBookForm from './addBook';
 
 const Bookstore = () => {
-  const [booksList] = useState([
+  const [booksList, setBookList] = useState([
     {
       title: 'stormligth',
       author: 'Brandon Sanderson',
@@ -14,12 +15,25 @@ const Bookstore = () => {
       id: 2,
     },
   ]);
-  const deleteBook = () => {
-    console.log('a book, wow');
+  const deleteBook = (id) => {
+    setBookList([
+      ...booksList.filter((el) => el.id !== id),
+    ]);
+  };
+  const addBook = (title, author) => {
+    const newTodo = {
+      title,
+      author,
+      id: Date.now(),
+    };
+    setBookList([
+      ...booksList, newTodo,
+    ]);
   };
   return (
     <div>
-      <MyBookList arr={booksList} deleteFunc={deleteBook} />
+      <AddBookForm addBook={addBook} />
+      <MyBookList booksList={booksList} deleteFunc={deleteBook} />
     </div>
   );
 };
