@@ -3,37 +3,24 @@ import MyBookList from './myBookList';
 import AddBookForm from './addBook';
 
 const Bookstore = () => {
-  const [booksList, setBookList] = useState([
+  const [booksList] = useState([
     {
       title: 'stormligth',
       author: 'Brandon Sanderson',
+      genre: 'Fantasy',
       id: 1,
     },
     {
       title: 'Harry Potter',
       author: 'J.K. Rawling',
+      genre: 'Fantasy',
       id: 2,
     },
   ]);
-  const deleteBook = (id) => {
-    setBookList([
-      ...booksList.filter((el) => el.id !== id),
-    ]);
-  };
-  const addBook = (title, author) => {
-    const newTodo = {
-      title,
-      author,
-      id: Date.now(),
-    };
-    setBookList([
-      ...booksList, newTodo,
-    ]);
-  };
   return (
     <div>
-      <AddBookForm addBook={addBook} />
-      <MyBookList booksList={booksList} deleteFunc={deleteBook} />
+      <MyBookList booksList={booksList} />
+      <AddBookForm />
     </div>
   );
 };
