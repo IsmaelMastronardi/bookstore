@@ -12,7 +12,6 @@ const bookSlice = createSlice({
       const bookItem = {
         title: payload.title,
         author: payload.author,
-        // genre: payload.genre,
         id: Date.now(),
       };
       state.booksArr = state.booksArr.concat(bookItem);

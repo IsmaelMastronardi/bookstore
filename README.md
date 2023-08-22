@@ -8,7 +8,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -76,7 +75,7 @@ Example commands:
 
 ```
   cd my-folder
-  git clone https://github.com/IsmaelMastronardi/Todo_List.git
+  git clone https://github.com/IsmaelMastronardi/bookstore.git
 ```
 ---
 
@@ -135,7 +134,7 @@ Example command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/IsmaelMastronardi/math-magician/issues).
+Feel free to check the [issues page](https://github.com/IsmaelMastronardi/bookstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
