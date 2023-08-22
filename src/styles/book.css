@@ -1,0 +1,19 @@
+.bookListItem {
+  width: 400px;
+  border: 1px solid rgb(92, 90, 90);
+}
+
+.booksBtnList {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.bookBtn {
+  border: none;
+  background-color: white;
+  color: rgb(120, 120, 228);
+  font-size: 1rem;
+}
