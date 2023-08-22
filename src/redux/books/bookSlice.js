@@ -29,9 +29,9 @@ const bookSlice = createSlice({
   reducers: {
     addBook: (state, { payload }) => {
       const bookItem = {
+        item_id: `${Date.now()}a`,
         title: payload.title,
         author: payload.author,
-        id: Date.now(),
       };
       state.booksArr = state.booksArr.concat(bookItem);
     },
