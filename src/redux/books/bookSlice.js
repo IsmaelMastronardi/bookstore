@@ -1,20 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  booksArr: [
-    {
-      title: 'stormligth',
-      author: 'Brandon Sanderson',
-      genre: 'Fantasy',
-      id: 1,
-    },
-    {
-      title: 'Harry Potter',
-      author: 'J.K. Rawling',
-      genre: 'Fantasy',
-      id: 2,
-    },
-  ],
+  booksArr: [],
 };
 
 const bookSlice = createSlice({
