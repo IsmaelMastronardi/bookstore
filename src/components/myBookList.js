@@ -1,18 +1,14 @@
-/* eslint-disable max-len */
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Book from './book';
 import '../styles/bookList.css';
 
-function MyBookList({ booksList }) {
+const MyBookList = () => {
+  const { booksArr } = useSelector((store) => store.bookStore);
   return (
     <ul className="booksList">
-      {booksList.map((el) => <Book key={el.id} item={el} />)}
+      {booksArr.map((el) => <Book key={el.id} item={el} />)}
     </ul>
   );
-}
-
-MyBookList.propTypes = {
-  booksList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
 };
 
 export default MyBookList;
