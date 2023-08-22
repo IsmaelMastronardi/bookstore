@@ -1,7 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  booksArr: [],
+  booksArr: [
+    {
+      title: 'stormligth',
+      author: 'Brandon Sanderson',
+      genre: 'Fantasy',
+      id: 1,
+    },
+    {
+      title: 'Harry Potter',
+      author: 'J.K. Rawling',
+      genre: 'Fantasy',
+      id: 2,
+    },
+  ],
 };
 
 const bookSlice = createSlice({
@@ -16,9 +29,15 @@ const bookSlice = createSlice({
         id: Date.now(),
       };
       state.booksArr = state.booksArr.concat(bookItem);
+      console.log(state.booksArr);
+    },
+    removeBook: (state, id) => {
+      state.booksArr = state.booksArr.filter((item) => item.id !== id);
+      console.log(state.booksArr);
+      console.log('yes');
     },
   },
 });
 
-export const { addBook } = bookSlice.actions;
+export const { addBook, removeBook } = bookSlice.actions;
 export default bookSlice.reducer;
