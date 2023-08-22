@@ -11,8 +11,8 @@ const Book = ({ item }) => {
       <h2>{item.title}</h2>
       <p>{item.author}</p>
       <ul className="booksBtnList">
-        <li><button type="button" className="bookBtn" onClick={() => dispatch(removeBook(item.id))}>Comment</button></li>
-        <li><button type="button" className="bookBtn">Delete</button></li>
+        <li><button type="button" className="bookBtn">Comment</button></li>
+        <li><button type="button" className="bookBtn" onClick={() => dispatch(removeBook(item.id))}>Delete</button></li>
         <li><button type="button" className="bookBtn">Edit</button></li>
       </ul>
     </li>
