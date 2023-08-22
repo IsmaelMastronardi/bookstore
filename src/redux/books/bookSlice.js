@@ -29,12 +29,10 @@ const bookSlice = createSlice({
         id: Date.now(),
       };
       state.booksArr = state.booksArr.concat(bookItem);
-      console.log(state.booksArr);
     },
     removeBook: (state, action) => {
       const myId = action.payload;
       state.booksArr = state.booksArr.filter((item) => item.id !== myId);
-      console.log(state.booksArr);
     },
   },
 });
