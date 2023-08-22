@@ -7,7 +7,7 @@ const Categories = () => {
   const { categoriesArr } = useSelector((store) => store.categoriesStore);
   useEffect(() => {
     dispatch(checkStatus('construction'));
-  }, []);
+  }, [dispatch]);
   return (
     <p>{categoriesArr}</p>
   );

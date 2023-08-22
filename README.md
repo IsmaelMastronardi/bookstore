@@ -31,7 +31,7 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Html, CSS, Javascript and React.js.
+> Html, CSS, Javascript, React.js and Redux.
 
 <!-- Features -->
 
@@ -40,6 +40,7 @@
 - **[Single Page Application build using React]**
 - **[Navbar using Routes]**
 - **[Displays different books]**
+- **[Add and remove books]**
 
 
 
