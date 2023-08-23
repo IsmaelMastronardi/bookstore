@@ -6,7 +6,7 @@ const MyBookList = () => {
   const { booksArr } = useSelector((store) => store.bookStore);
   return (
     <ul className="booksList">
-      {booksArr.map((el) => <Book key={el.id} item={el} />)}
+      {booksArr.map((el) => <Book key={el.item_id} item={el} />)}
     </ul>
   );
 };
