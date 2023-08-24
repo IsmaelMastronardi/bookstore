@@ -5,25 +5,23 @@ const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 
 export const fetchBooks = createAsyncThunk(
   'books/booksBooksSlice',
-  // eslint-disable-next-line consistent-return
   async () => {
     try {
       const response = await axios.get(url);
       const data = await response.data;
       return data;
     } catch (error) {
-      console.log(error);
+      throw new Error(error);
     }
   },
 );
 
 export const createBook = createAsyncThunk('books/createBook', async (book) => {
   try {
-    const response = await axios.post(url, book);
-    console.log(response);
+    await axios.post(url, book);
     return book;
   } catch (error) {
-    return error;
+    throw new Error(error);
   }
 });
 
@@ -32,7 +30,7 @@ export const deleteBook = createAsyncThunk('books/deletbook', async (id) => {
   try {
     await axios.delete(delId);
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
   return id;
 });
@@ -66,9 +64,18 @@ const bookSlice = createSlice({
     builder.addCase(fetchBooks.pending, (state) => {
       state.status = 'loading';
     });
+    builder.addCase(fetchBooks.rejected, (state, action) => {
+      state.status = 'error';
+      state.error = `${action.error.message}. Error getting your books`;
+    });
     builder.addCase(fetchBooks.fulfilled, (state, action) => {
       state.status = 'succeeded';
       state.booksArr = action.payload;
+      state.error = '';
+    });
+    builder.addCase(createBook.rejected, (state, action) => {
+      state.status = 'createError';
+      state.error = `${action.error.message}. Error uploading the new book.`;
     });
     builder.addCase(createBook.fulfilled, (state, action) => {
       state.status = 'succeeded';
@@ -79,52 +86,18 @@ const bookSlice = createSlice({
         author: pay.author,
         category: pay.category,
       }];
+      state.error = '';
     });
     builder.addCase(deleteBook.fulfilled, (state, action) => {
       state.status = 'succeeded';
       delete state.booksArr[action.payload];
     });
+    builder.addCase(deleteBook.rejected, (state, action) => {
+      state.status = 'deleteError';
+      state.error = `${action.error.message}. Error Deleting the book`;
+    });
   },
 });
-
-// const myId = 'z5kjKgi8wFsiuCStbu32';
-// const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/z5kjKgi8wFsiuCStbu32/books';
-// fetch(url, {
-//   method: 'GET',
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((response) => (response.text()))
-//   .then((text) => console.log(text));
-
-// fetch(url, {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     item_id: 121321522,
-//     title: 'stormligth Archive',
-//     author: 'Branderson',
-//     category: 'Medieval Fantasy',
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((res) => res.text())
-//   .then((text) => console.log(text));
-
-// const deleteId = `${url}/1692888643585a`;
-// fetch(deleteId, {
-//   method: 'DELETE',
-//   body: JSON.stringify({
-//     item_id: '1692888643585a',
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((res) => res.text())
-//   .then((text) => console.log(text));
 
 export const { removeBook } = bookSlice.actions;
 export default bookSlice.reducer;
