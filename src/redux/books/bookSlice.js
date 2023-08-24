@@ -41,12 +41,28 @@ const bookSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, { payload }) => {
-      const bookItem = {
-        item_id: `${Date.now()}a`,
-        title: payload.title,
-        author: payload.author,
-      };
-      state.booksArr = state.booksArr.concat(bookItem);
+      // const bookItem = {
+      //   item_id: `${Date.now()}a`,
+      //   title: payload.title,
+      //   author: payload.author,
+      // };
+      // state.booksArr = state.booksArr.concat(bookItem);
+
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({
+          item_id: `${Date.now()}a`,
+          title: payload.title,
+          author: payload.author,
+          category: 'Medieval Fantasy',
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((res) => res.text())
+        .then((text) => console.log(text))
+        .then(console.log(state.booksArr));
     },
     removeBook: (state, action) => {
       const myId = action.payload;

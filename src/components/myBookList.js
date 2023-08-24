@@ -6,6 +6,7 @@ import { fetchBooks } from '../redux/books/bookSlice';
 
 const MyBookList = () => {
   const { booksArr, status } = useSelector((store) => store.bookStore);
+  console.log(booksArr);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
@@ -16,7 +17,6 @@ const MyBookList = () => {
   }
   if (status === 'succeeded') {
     // Object.keys(booksArr).forEach((key) => console.log(booksArr[key][0]));
-    Object.keys(booksArr).map((key) => console.log(booksArr[key]));
     return (
       <>
         <ul className="booksList">
@@ -25,7 +25,7 @@ const MyBookList = () => {
       </>
     );
   }
-  return (<p>aaaaaa</p>);
+  return (<p>Error</p>);
 };
 
 export default MyBookList;
