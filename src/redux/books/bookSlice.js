@@ -19,11 +19,22 @@ export const fetchBooks = createAsyncThunk(
 
 export const createBook = createAsyncThunk('books/createBook', async (book) => {
   try {
-    await axios.post(url, book);
+    const response = await axios.post(url, book);
+    console.log(response);
     return book;
   } catch (error) {
     return error;
   }
+});
+
+export const deleteBook = createAsyncThunk('books/deletbook', async (id) => {
+  const delId = `${url}/${id}`;
+  try {
+    await axios.delete(delId);
+  } catch (error) {
+    console.log(error);
+  }
+  return id;
 });
 
 const initialState = {
@@ -62,15 +73,16 @@ const bookSlice = createSlice({
     builder.addCase(createBook.fulfilled, (state, action) => {
       state.status = 'succeeded';
       const pay = action.payload;
-      console.log(pay);
-      console.log('Books Array:', JSON.parse(JSON.stringify(state.booksArr)));
       const newKey = pay.item_id;
       state.booksArr[newKey] = [{
         title: pay.title,
         author: pay.author,
         category: pay.category,
       }];
-      console.log('Books Array:', JSON.parse(JSON.stringify(state.booksArr)));
+    });
+    builder.addCase(deleteBook.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      delete state.booksArr[action.payload];
     });
   },
 });
