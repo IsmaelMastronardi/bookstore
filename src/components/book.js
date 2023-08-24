@@ -3,7 +3,7 @@ import '../styles/book.css';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/bookSlice';
 
-const Book = ({ item }) => {
+const Book = ({ item, id }) => {
   const dispatch = useDispatch();
   return (
     <li className="bookListItem">
@@ -12,7 +12,7 @@ const Book = ({ item }) => {
       <p>{item.author}</p>
       <ul className="booksBtnList">
         <li><button type="button" className="bookBtn">Comment</button></li>
-        <li><button type="button" className="bookBtn" onClick={() => dispatch(removeBook(item.item_id))}>Delete</button></li>
+        <li><button type="button" className="bookBtn" onClick={() => dispatch(removeBook(id))}>Delete</button></li>
         <li><button type="button" className="bookBtn">Edit</button></li>
       </ul>
     </li>
@@ -21,6 +21,7 @@ const Book = ({ item }) => {
 
 Book.propTypes = {
   item: PropTypes.objectOf(PropTypes.string).isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Book;

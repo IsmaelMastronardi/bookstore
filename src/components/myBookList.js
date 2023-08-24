@@ -9,7 +9,6 @@ const MyBookList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
-    console.log(booksArr);
   }, [dispatch]);
   if (status === 'loading') {
     return (<p>{status}</p>
@@ -20,7 +19,7 @@ const MyBookList = () => {
     return (
       <>
         <ul className="booksList">
-          {Object.keys(booksArr).map((key) => <Book key={key} item={booksArr[key][0]} />)}
+          {Object.keys(booksArr).map((key) => <Book key={key} item={booksArr[key][0]} id={key} />)}
         </ul>
       </>
     );

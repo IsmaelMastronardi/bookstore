@@ -62,11 +62,24 @@ const bookSlice = createSlice({
         },
       })
         .then((res) => res.text())
-        .then((text) => console.log(text));
+        .then(fetchBooks());
     },
     removeBook: (state, action) => {
+      console.log(action.payload);
       const myId = action.payload;
-      state.booksArr = state.booksArr.filter((item) => item.item_id !== myId);
+      // state.booksArr = state.booksArr.filter((item) => item.item_id !== myId);
+
+      const deleteId = `${url}/${myId}`;
+      fetch(deleteId, {
+        method: 'DELETE',
+        body: JSON.stringify({
+          item_id: myId,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+      fetchBooks();
     },
   },
   extraReducers: (builder) => {
