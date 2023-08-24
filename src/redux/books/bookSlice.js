@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/z5kjKgi8wFsiuCStbu32/books';
 
 export const fetchBooks = createAsyncThunk(
   'books/booksBooksSlice',
   async () => {
-    const response = await fetch(url);
-    const data = await response.json();
+    const response = await axios.get(url);
+    const data = await response.data;
     return data;
   },
 );
@@ -61,8 +62,7 @@ const bookSlice = createSlice({
         },
       })
         .then((res) => res.text())
-        .then((text) => console.log(text))
-        .then(console.log(state.booksArr));
+        .then((text) => console.log(text));
     },
     removeBook: (state, action) => {
       const myId = action.payload;

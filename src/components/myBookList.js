@@ -6,10 +6,10 @@ import { fetchBooks } from '../redux/books/bookSlice';
 
 const MyBookList = () => {
   const { booksArr, status } = useSelector((store) => store.bookStore);
-  console.log(booksArr);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
+    console.log(booksArr);
   }, [dispatch]);
   if (status === 'loading') {
     return (<p>{status}</p>
