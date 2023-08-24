@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { addBook } from '../redux/books/bookSlice';
+import { createBook } from '../redux/books/bookSlice';
 
 const AddBookForm = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,13 @@ const AddBookForm = () => {
       <button
         type="button"
         onClick={() => {
-          dispatch(addBook({ title, author }));
+          const newBook = {
+            item_id: `${Date.now()}a`,
+            title,
+            author,
+            category: 'Medieval Fantasy',
+          };
+          dispatch(createBook(newBook));
         }}
       >
         Add Book
