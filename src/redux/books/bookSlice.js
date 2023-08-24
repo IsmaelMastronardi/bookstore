@@ -7,7 +7,7 @@ export const fetchBooks = createAsyncThunk(
   async () => {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    return data;
   },
 );
 
@@ -32,6 +32,8 @@ const initialState = {
     //   category: 'Nonfiction',
     // },
   ],
+  status: 'loading',
+  error: null,
 };
 
 const bookSlice = createSlice({
@@ -51,6 +53,16 @@ const bookSlice = createSlice({
       state.booksArr = state.booksArr.filter((item) => item.item_id !== myId);
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchBooks.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchBooks.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.booksArr = action.payload;
+      });
+  },
 });
 
 // const myId = 'z5kjKgi8wFsiuCStbu32';
@@ -67,7 +79,7 @@ const bookSlice = createSlice({
 // fetch(url, {
 //   method: 'POST',
 //   body: JSON.stringify({
-//     item_id: 12132152,
+//     item_id: 121321522,
 //     title: 'stormligth Archive',
 //     author: 'Branderson',
 //     category: 'Medieval Fantasy',
