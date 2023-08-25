@@ -1,10 +1,10 @@
 .navbar {
   display: flex;
-  border: 1px solid rgb(170, 167, 167);
+  border-bottom: 1px solid #e8e8e8;
   height: 5.93rem;
   margin: 0 0 2.375rem;
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
-  background-color: var(--white-two);
+  background-color: white;
   justify-content: space-between;
   align-items: center;
 }
@@ -31,6 +31,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  padding: 0;
 }
 
 a {

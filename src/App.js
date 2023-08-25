@@ -13,10 +13,10 @@ function App() {
           <h1 className="navbarTitle">Bookstore CMS</h1>
           <ul className="navbarList">
             <li>
-              <Link to="/">Books</Link>
+              <Link to="/">BOOKS</Link>
             </li>
             <li>
-              <Link to="/Categories">Categories</Link>
+              <Link to="/Categories">CATEGORIES</Link>
             </li>
           </ul>
         </div>

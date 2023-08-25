@@ -18,7 +18,7 @@ const AddBookForm = () => {
       <h3 className="addNewBook">ADD NEW BOOK</h3>
       <form className="form">
         <input className="titleInput" placeholder="Add Title" value={title} onChange={handleChange} />
-        <input className="authorinput" placeholder="Add Author" value={author} onChange={handleChange2} />
+        <input className="authorInput" placeholder="Add Author" value={author} onChange={handleChange2} />
         <button
           className="addBookBtn"
           type="button"
@@ -32,7 +32,7 @@ const AddBookForm = () => {
             dispatch(createBook(newBook));
           }}
         >
-          Add Book
+          ADD BOOK
         </button>
       </form>
 

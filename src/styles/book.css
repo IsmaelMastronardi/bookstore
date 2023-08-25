@@ -1,7 +1,10 @@
 .bookListItem {
-  border: 1px solid rgb(92, 90, 90);
+  width: 90%;
+  max-width: 75rem;
+  border: 1px solid #e8e8e8;
   display: flex;
   height: 10.625rem;
+  background-color: white;
 }
 
 .bookLeft {
@@ -13,30 +16,17 @@
   opacity: 0.5;
   font-size: 0.875rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
-  color: var(--black-two);
 }
 
 .title {
-  font-family: 'Roboto Slab', serif;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: -0.2px;
-  color: var(--black-two);
 }
 
 .author {
-  font-family: 'Roboto Slab', serif;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
 }
@@ -50,12 +40,8 @@
 }
 
 .bookBtn {
-  font-family: 'Roboto Slab', serif;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
   border: none;
   background-color: white;
@@ -72,6 +58,12 @@
   justify-content: space-around;
 }
 
+.line {
+  width: 0.125rem;
+  height: 1.5rem;
+  border-left: solid 2px #e8e8e8;
+}
+
 .progress {
   display: flex;
   align-items: center;
@@ -83,11 +75,7 @@
   margin: 0.063rem 0 0 0.688rem;
   font-size: 2rem;
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
-  color: var(--black-two);
 }
 
 .completed {
@@ -97,11 +85,7 @@
   opacity: 0.5;
   font-size: 0.875rem;
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
-  color: var(--black-two);
 }
 
 .bookProgress {
@@ -111,30 +95,27 @@
   align-items: start;
 }
 
+.lineB {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin-top: 3rem;
+  border-left: solid 2px #e8e8e8;
+}
+
 .currentChapter {
   margin: 0;
   opacity: 0.5;
-  font-family: 'Roboto Slab', serif;
   font-size: 0.813rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
-  color: var(--black-two);
 }
 
 .chapter {
   height: 1.313rem;
   margin: 0.438rem 6.813rem 0.25rem 0;
-  font-family: 'Roboto Slab', serif;
   font-size: 1rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: -0.4px;
-  color: var(--black-two);
 }
 
 .updateProgress {
@@ -149,19 +130,19 @@
   font-family: 'Roboto Slab', serif;
   font-size: 0.813rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 0.5px;
 }
 
-.updateProgressP {
+.fontRoboto {
   font-family: 'Roboto Slab', serif;
-  font-size: 0.813rem;
-  font-weight: 300;
+}
+
+.normal {
+  font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: 0.5px;
-  text-align: center;
-  color: white;
+}
+
+.customBlack {
+  color: #121212;
 }

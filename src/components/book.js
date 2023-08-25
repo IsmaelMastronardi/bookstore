@@ -9,12 +9,14 @@ const Book = ({ item, id }) => {
   return (
     <li className="bookListItem">
       <div className="bookLeft">
-        <p className="category">{item.category}</p>
-        <h2 className="title">{item.title}</h2>
-        <p className="author">{item.author}</p>
+        <p className="category normal customBlack">{item.category}</p>
+        <h2 className="title fontRoboto normal customBlack">{item.title}</h2>
+        <p className="author fontRoboto normal">{item.author}</p>
         <ul className="booksBtnList">
-          <li><button type="button" className="bookBtn">Comment</button></li>
-          <li><button type="button" className="bookBtn" onClick={() => dispatch(deleteBook(id))}>Delete</button></li>
+          <li><button type="button" className="bookBtn normal">Comments</button></li>
+          <div className="line" />
+          <li><button type="button" className="bookBtn fontRoboto" onClick={() => dispatch(deleteBook(id))}>Delete</button></li>
+          <div className="line" />
           <li><button type="button" className="bookBtn">Edit</button></li>
         </ul>
       </div>
@@ -22,17 +24,18 @@ const Book = ({ item, id }) => {
         <div className="progress">
           <img src={progressImg} alt="book progress" className="bookProgressIcon" />
           <div>
-            <p className="percentage">64%</p>
-            <p className="completed">Completed</p>
+            <p className="percentage normal customBlack">64%</p>
+            <p className="completed normal customBlack">Completed</p>
           </div>
         </div>
         <div>
           <hr className="bookLine" />
         </div>
+        <div className="lineB" />
         <div className="bookProgress">
-          <p className="currentChapter">CURRENT CHAPTER</p>
-          <p className="chapter">Chapter 17</p>
-          <button className="updateProgress" type="button">
+          <p className="currentChapter fontRoboto normal customBlack">CURRENT CHAPTER</p>
+          <p className="chapter fontRoboto normal customBlack">Chapter 17</p>
+          <button className="updateProgress fontRoboto normal" type="button">
             UPDATE PROGRESS
           </button>
         </div>
