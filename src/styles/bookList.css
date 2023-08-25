@@ -1,4 +1,9 @@
 .booksList {
   list-style: none;
   padding: 0;
+  margin-left: 6.25rem;
+  margin-right: 6.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.938rem;
 }

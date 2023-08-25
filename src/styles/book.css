@@ -1,6 +1,11 @@
 .bookListItem {
-  width: 400px;
   border: 1px solid rgb(92, 90, 90);
+  display: flex;
+}
+
+.bookLeft {
+  width: 48%;
+  margin-left: 1.688rem;
 }
 
 .booksBtnList {
@@ -16,4 +21,103 @@
   background-color: white;
   color: rgb(120, 120, 228);
   font-size: 1rem;
+}
+
+.bookProgressIcon {
+  width: 4.25rem;
+}
+
+.booksRigth {
+  width: 52%;
+  display: flex;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+}
+
+.percentage {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.bookProgress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.currentChapter {
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+
+  /* font-family: RobotoSlab; */
+
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.chapter {
+  height: 1.313rem;
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+
+  /* font-family: RobotoSlab; */
+
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: var(--black-two);
+}
+
+.updateProgress {
+  width: 11.5rem;
+  height: 2.063rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+}
+
+.updateProgressP {
+  /* font-family: RobotoSlab; */
+
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: white;
 }
