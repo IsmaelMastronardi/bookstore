@@ -6,6 +6,13 @@ import store from './redux/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+// const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
+
+// fetch(url, {
+//   method: 'POST',
+// })
+//   .then((reponse) => reponse.text())
+//   .then((text) => console.log(text));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

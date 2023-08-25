@@ -40,6 +40,7 @@
 - **[Navbar using Routes]**
 - **[Displays different books]**
 - **[Add and remove books]**
+- **[Use Bookstore API to save and load the books]**
 
 
 
