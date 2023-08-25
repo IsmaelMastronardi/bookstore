@@ -9,9 +9,9 @@ const Book = ({ item, id }) => {
   return (
     <li className="bookListItem">
       <div className="bookLeft">
-        <p>{item.category}</p>
-        <h2>{item.title}</h2>
-        <p>{item.author}</p>
+        <p className="category">{item.category}</p>
+        <h2 className="title">{item.title}</h2>
+        <p className="author">{item.author}</p>
         <ul className="booksBtnList">
           <li><button type="button" className="bookBtn">Comment</button></li>
           <li><button type="button" className="bookBtn" onClick={() => dispatch(deleteBook(id))}>Delete</button></li>
@@ -32,9 +32,9 @@ const Book = ({ item, id }) => {
         <div className="bookProgress">
           <p className="currentChapter">CURRENT CHAPTER</p>
           <p className="chapter">Chapter 17</p>
-          <div className="updateProgress">
-            <p className="updateProgressP">UPDATE PROGRESS</p>
-          </div>
+          <button className="updateProgress" type="button">
+            UPDATE PROGRESS
+          </button>
         </div>
       </div>
     </li>
