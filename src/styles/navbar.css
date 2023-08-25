@@ -1,10 +1,36 @@
 .navbar {
   display: flex;
-  border: 1px solid rgb(170, 167, 167);
+  border-bottom: 1px solid #e8e8e8;
+  height: 5.93rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 0 1.688rem 0;
+  background-color: white;
+  justify-content: center;
+}
+
+.innerNavbar {
+  width: 90%;
+  max-width: 75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbarLeft {
+  display: flex;
 }
 
 .navbarTitle {
-  color: rgb(99, 99, 197);
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
 }
 
 .navbarList {
@@ -12,6 +38,20 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  padding: 0;
+}
+
+a {
+  width: 3.688rem;
+  height: 1rem;
+  margin: 1.125rem 2.563rem 0.688rem 0;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-two);
 }
 
 a:link,
@@ -20,4 +60,9 @@ a:hover,
 a:visited {
   color: black;
   text-decoration: none;
+}
+
+.userIcon {
+  width: 2.813rem;
+  height: 2.813rem;
 }
