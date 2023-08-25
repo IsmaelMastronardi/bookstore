@@ -9,18 +9,20 @@ function App() {
   return (
     <>
       <nav className="navbar">
-        <div className="navbarLeft">
-          <h1 className="navbarTitle">Bookstore CMS</h1>
-          <ul className="navbarList">
-            <li>
-              <Link to="/">BOOKS</Link>
-            </li>
-            <li>
-              <Link to="/Categories">CATEGORIES</Link>
-            </li>
-          </ul>
+        <div className="innerNavbar">
+          <div className="navbarLeft">
+            <h1 className="navbarTitle">Bookstore CMS</h1>
+            <ul className="navbarList">
+              <li>
+                <Link to="/">BOOKS</Link>
+              </li>
+              <li>
+                <Link to="/Categories">CATEGORIES</Link>
+              </li>
+            </ul>
+          </div>
+          <img src={user} alt="" className="userIcon" />
         </div>
-        <img src={user} alt="" className="userIcon" />
       </nav>
       <Routes>
         <Route path="/" element={<Bookstore />} />
